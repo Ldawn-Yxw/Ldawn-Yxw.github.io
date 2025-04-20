@@ -17,7 +17,7 @@ export default defineValaxyConfig<UserThemeConfig>({
   themeConfig: {
     banner: {
       enable: true,
-      title: 'Ldawn-Blog',
+      title: '图图不糊涂',
     },
 
     pages: [
