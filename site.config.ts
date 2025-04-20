@@ -3,7 +3,7 @@ import { defineSiteConfig } from 'valaxy'
 export default defineSiteConfig({
   url: 'https://Ldawn-Yxw.github.io/',
   lang: 'zh-CN',
-  title: 'Valaxy Theme Yun',
+  title: 'Ldawn-Blog',
   author: {
     name: 'Ldawn-Yxw',
   },
