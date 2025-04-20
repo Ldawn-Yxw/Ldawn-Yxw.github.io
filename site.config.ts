@@ -5,9 +5,13 @@ export default defineSiteConfig({
   lang: 'zh-CN',
   title: 'Ldawn-Blog',
   author: {
-    name: '图图不糊涂',
-    avatar: "D:\\Blog\\valaxy-blog\\img\\a.jpg",	//头像链接
+    name: '图图不糊涂',//博主名称
+    avatar: "./img/a.jpg",	//头像链接
+    status: {
+      emoji: '💛'	// 头像旁边的emoji
+    },
   },
+  description: '小小技术博客',
   social: [
     {
       name: 'RSS',
