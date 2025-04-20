@@ -9,13 +9,16 @@
     "build:ssg": "valaxy build --ssg",
     "dev": "valaxy",
     "rss": "valaxy rss",
-    "serve": "vite preview"
+    "serve": "vite preview",
+    "deploy": "gh-pages -d dist"
   },
   "dependencies": {
     "valaxy": "0.22.5",
     "valaxy-theme-yun": "0.22.5"
   },
   "devDependencies": {
+    "gh-pages": "^6.3.0",
     "typescript": "^5.7.2"
   }
+  
 }
