@@ -1,13 +1,13 @@
 import { defineSiteConfig } from 'valaxy'
 
 export default defineSiteConfig({
-  url: 'https://ldawn-yxw.github.io/',
+  url: 'https://Ldawn-Yxw.github.io/',
   lang: 'zh-CN',
   title: 'Ldawn-Blog',
   author: {
-    name: 'Ldawn-Yxw',
+    name: '图图不糊涂',
+    avatar: "D:\\Blog\\valaxy-blog\\img\\a.jpg",	//头像链接
   },
-  description: 'Valaxy Theme Yun Preview.',
   social: [
     {
       name: 'RSS',
@@ -29,7 +29,7 @@ export default defineSiteConfig({
     },
     {
       name: 'E-Mail',
-      link: '3228892143@qq.com',
+      link: 'https://3228892143@qq.com',
       icon: 'i-ri-mail-line',
       color: '#8E71C1',
     },

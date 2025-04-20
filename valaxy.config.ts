@@ -17,21 +17,15 @@ export default defineValaxyConfig<UserThemeConfig>({
   themeConfig: {
     banner: {
       enable: true,
-      title: '云游君的小站',
+      title: 'Ldawn-Blog',
     },
 
     pages: [
       {
-        name: '我的小伙伴们',
-        url: '/links/',
-        icon: 'i-ri-genderless-line',
+        name: '分类',
+        url: '/categories/',
+        icon: 'i-ri-apps-line',
         color: 'dodgerblue',
-      },
-      {
-        name: '喜欢的女孩子',
-        url: '/girls/',
-        icon: 'i-ri-women-line',
-        color: 'hotpink',
       },
     ],
 
