@@ -1,7 +1,7 @@
 import { defineSiteConfig } from 'valaxy'
 
 export default defineSiteConfig({
-  url: 'https://Ldawn-Yxw.github.io/',
+  url: 'https://ldawn-yxw.github.io/',
   lang: 'zh-CN',
   title: 'Ldawn-Blog',
   author: {
