@@ -4,12 +4,10 @@ export default defineSiteConfig({
   url: 'https://Ldawn-Yxw.github.io/',
   lang: 'zh-CN',
   title: 'Ldawn-Blog',
+  subtitle: '但行好事, 莫问前程',//网站副标题
   author: {
     name: '图图不糊涂',//博主名称
     avatar: "https://userpic.codeforces.org/3526839/title/61e8503ddb4b1446.jpg",	//头像链接
-    status: {
-      emoji: '💛'	// 头像旁边的emoji
-    },
   },
   description: '小小技术博客',
   social: [
