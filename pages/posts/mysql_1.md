@@ -1,5 +1,5 @@
 ---
-title: ySQL内置函数
+title: MySQL内置函数
 date: 2025-5-15
 updated: 2025-5-15
 categories: MySQL
