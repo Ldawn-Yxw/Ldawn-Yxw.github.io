@@ -1,5 +1,5 @@
 ---
-title: DIV2_1023
+title: ySQL内置函数
 date: 2025-5-15
 updated: 2025-5-15
 categories: MySQL
@@ -8,11 +8,9 @@ tags:
 top: 1
 ---
 
-# MySQL内置函数
+# 日期函数
 
-## 日期函数
-
-### 时间戳
+## 时间戳
 ```sql
 mysql> select current_date();
 +----------------+
@@ -48,7 +46,7 @@ mysql> select now();
 
 ```
 
-### 提取日期
+## 提取日期
 ```sql
 mysql> select date('2025-5-15 00:00:00');
 +----------------------------+
@@ -67,7 +65,7 @@ mysql> select date(now());
 1 row in set (0.00 sec)
 ```
 
-### 日期计算
+## 日期计算
 
 `加时间`
 
@@ -153,4 +151,4 @@ mysql> select datediff('2017-10-10', '2016-09-01');
 1 row in set (0.00 sec)
 ```
 
-### 应用
+## 应用
