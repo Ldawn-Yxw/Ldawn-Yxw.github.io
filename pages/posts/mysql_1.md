@@ -234,3 +234,172 @@ mysql> select
 ```
 
 # 字符串函数
+
+`charset(string)`
+
+> 返回字符串对应的编码方式
+
+```sql
+mysql> select * from t6;
++--------+
+| name   |
++--------+
+| avs    |
+| avs    |
+| 中国   |
++--------+
+3 rows in set (0.00 sec)
+
+mysql> select charset(name) from t6;
++---------------+
+| charset(name) |
++---------------+
+| utf8          |
+| utf8          |
+| utf8          |
++---------------+
+3 rows in set (0.00 sec)
+```
+`concat(string, ...)`
+
+> 连接字符串
+
+```sql
+mysql> select concat('a', 'b', 'c') as res;
++------+
+| res  |
++------+
+| abc  |
++------+
+1 row in set (0.00 sec)
+```
+
+`instr(string, substring)`
+
+> 查询子串在字符串中出现的位置, 没有则返回0(下标是从1开始)。
+
+```sql
+mysql> select instr("slfdlabcd", "abc");
++---------------------------+
+| instr("slfdlabcd", "abc") |
++---------------------------+
+|                         6 |
++---------------------------+
+1 row in set (0.00 sec)
+```
+
+`ucase(string)`
+
+> 转换大写
+
+```sql
+mysql> select ucase('asdkad');
++-----------------+
+| ucase('asdkad') |
++-----------------+
+| ASDKAD          |
++-----------------+
+1 row in set (0.00 sec)
+```
+
+`lcase(string)`
+
+> 转换小写
+
+```sql
+mysql> select lcase('AJSK');
++---------------+
+| lcase('AJSK') |
++---------------+
+| ajsk          |
++---------------+
+1 row in set (0.00 sec)
+```
+
+`left(string, length)`
+
+> 从最左边开始提取length个字符
+
+```sql
+mysql> select left('shdkajd', 3);
++--------------------+
+| left('shdkajd', 3) |
++--------------------+
+| shd                |
++--------------------+
+1 row in set (0.00 sec)
+```
+
+`length(string)`
+
+> 返回字符串的长度
+
+```sql
+mysql> select length('sdajl');
++-----------------+
+| length('sdajl') |
++-----------------+
+|               5 |
++-----------------+
+1 row in set (0.00 sec)
+```
+
+`replace(string, search_str, replace_str)`
+
+> 在string用replace_str代替search_str
+
+```sql
+mysql> select replace('aseskd', 'es', 'ab');
++-------------------------------+
+| replace('aseskd', 'es', 'ab') |
++-------------------------------+
+| asabkd                        |
++-------------------------------+
+1 row in set (0.00 sec)
+```
+
+`strcmp(string1, string2)`
+
+>string1 < string2, 返回 -1, 相等则返回 0, 否则返回 1。
+
+```sql
+mysql> select strcmp('abd', 'acds');
++-----------------------+
+| strcmp('abd', 'acds') |
++-----------------------+
+|                    -1 |
++-----------------------+
+1 row in set (0.00 sec)
+
+mysql> select strcmp('aed', 'acds');
++-----------------------+
+| strcmp('aed', 'acds') |
++-----------------------+
+|                     1 |
++-----------------------+
+1 row in set (0.00 sec)
+
+mysql> select strcmp('abc', 'abc');
++----------------------+
+| strcmp('abc', 'abc') |
++----------------------+
+|                    0 |
++----------------------+
+1 row in set (0.00 sec)
+```
+
+`substring(string, pos, length)`
+
+> 从pos开始提取length个字符
+
+```sql
+mysql> select substring('dsjhfuiah', 3, 4);
++------------------------------+
+| substring('dsjhfuiah', 3, 4) |
++------------------------------+
+| jhfu                         |
++------------------------------+
+1 row in set (0.00 sec)
+```
+
+
