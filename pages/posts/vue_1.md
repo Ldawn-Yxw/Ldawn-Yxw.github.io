@@ -9,11 +9,11 @@ tags:
 top: 1
 ---
 
-## 常量与变量
+## 常量与变量 📝
 
-`let` 定义变量, 可以被多次赋值
+`let` 定义变量, 可以被多次赋值 ✏️
 
-`const` 定义常量, 不能被二次赋值
+`const` 定义常量, 不能被二次赋值 🔒
 
 ```js
 // 变量
@@ -28,7 +28,6 @@ age = 20; // 报错
 ```
 
 <img src="../img/vue1.png">
-
 
 🧐 `const` 声明的数组可以添加或删除吗？ `const` 声明的对象可以添加或修改属性吗？
 
@@ -53,7 +52,7 @@ console.log(obj);
 
 <img src="../img/vue2.png">
 
-## 模板字符串
+## 模板字符串 🧩
 
 `普通字符串`：用单引号或双引号声明的
 
@@ -91,7 +90,7 @@ console.log(str4);
 console.log(str5);
 ```
 
-## 对象
+## 对象 🧱
 
 `对象` = `属性` + `方法` 的 集合
 
@@ -133,13 +132,13 @@ console.log(obj)
 
 <img src="../img/vue4.png">
 
-## 解构赋值
+## 解构赋值 🧩
 
 `解构赋值`: 根据一定的结构从数组或对象中快速取值
 
-> `目标`：数组或对象
+> `目标`：数组或对象 🎯
 
-> `作用`：让数组或对象的取值更便捷
+> `作用`：让数组或对象的取值更便捷 ⚡️
 
 ### 数组的解构
 ```js
@@ -203,7 +202,7 @@ console.log(a);
 >console.log(name, age, gender);
 >```
 
-## 箭头函数
+## 箭头函数 ➡️
 
 `箭头函数`: 对之前普通函数的一种简化, 写法更简洁
 
@@ -240,7 +239,7 @@ let b = 2
 console.log(a + " + " + b + " = " + solve(a, b))
 ```
 
-### 特性:
+### 特性: ✨
 `1.` 当参数只有一个时，可以忽略小括号
 ```js
 const solve = a => {
@@ -261,7 +260,7 @@ const solve = () => {
 }
 ```
 
-### 应用:
+### 应用: 💡
 既可以用于函数的声明，也可以多用于回调函数传参
 
 ```js
@@ -276,21 +275,21 @@ solve( () => {
 }, 100)
 ```
 
-## 数组重要方法
+## 数组重要方法 🧮
 
-### 添加
+### 添加 ➕
 
   `push()` : 尾部添加
 
   `unshift()` : 头部添加
 
-### 删除
+### 删除 ➖
    
   `pop()` : 尾部删除
 
   `shift()` : 头部删除
 
-### 任意位置删除或添加
+### 任意位置删除或添加 🔄
 
   `splice(startIndex, delCount, ...addItem)`: 
 
@@ -300,7 +299,7 @@ solve( () => {
 
   addItem: 要填加的元素
 
-### 遍历
+### 遍历 🔍
 
 ```js
 arr.forEach((item, index, array) => {
@@ -320,7 +319,7 @@ let result = arr.forEach((item, index, array) => {
 console.log(result)
 ```
 
-### 过滤
+### 过滤 🎯
 ```js
 const eventArr = arr.filter((item) => {
   if (item % 2 == 0) {
@@ -331,7 +330,7 @@ const eventArr = arr.filter((item) => {
 })
 ```
 
-### 映射
+### 映射 🔄
 ```js
 arr.map((item, index, array) => {
   console.log(item, index, array)
@@ -352,7 +351,7 @@ const newArr = arr.map((index, item) => {
 console.log(newArr)
 ```
 
-### 检测每一个
+### 检测每一个 ✅
 
 `检测每一个`: 检测数组中每一个元素是否都满足条件，如果都满足，则返回true; 否则只要发现一个不满足，就返回false
 
