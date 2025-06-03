@@ -363,3 +363,169 @@ const flag = arr.every(item => item > 0)
 console.log(flag)
 ```
 <img src="../img/vue5.png">
+
+### 汇总
+
+`汇总`: 常用于数组去和, 但不限于求和
+
+```js
+let arr = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
+
+arr.reduce((prev, item, index, arr) => {
+  console.log(prev, item, index, arr);
+}, 0)
+```
+<img src="../img/vue6.png">
+
+```js
+let arr = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
+
+arr.reduce((prev, item, index, arr) => {
+  console.log(prev, item, index, arr);
+  return prev + item // 返回值会作为下一次的prev
+}, 0)
+```
+<img src="../img/vue7.png">
+
+```js
+let arr = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
+
+let result = arr.reduce((prev, item) => {
+  return prev + item
+}, 0)
+
+console.log(result);
+```
+<img src="../img/vue8.png">
+
+对象数组也可以这样
+```js
+let arr = [
+  {num: 1, name: '蓝桥'}, 
+  {num: 2, name: '玩具'}, 
+  {num: 3, name: '书籍'}, 
+]
+
+let result = arr.reduce((prev, item) => {
+  return prev + item.num
+}, 0)
+
+console.log(result);
+```
+
+## 对象重要方法
+
+```js
+const obj = {
+  id: 100001,
+  name: '张三',
+  age: 18,
+  gender: '男',
+  address: '北京'
+}
+
+// 以前遍历对象
+for (let key in obj) {
+  console.log(key, obj[key]);
+}
+
+// 新写法
+Object.keys(obj).forEach(key => {
+  console.log(key, obj[key]);
+})
+
+// Object.keys(obj) 返回一个数组，数组中是对象的属性名
+
+Object.values(obj).filter(key => key.startsWith('a')).forEach(key => {
+  console.log(key, obj[key]);
+})
+  
+```
+
+## 扩展运算符
+
+`作用`: 
+`1.` 在解构赋值时, 用于收集余下所有的
+`2.` 复制数组或对象
+`3.` 合并数组或对象
+
+```js
+const arr1 = [1, 2, 3]
+const arr2 = arr1
+arr2.push(4)
+console.log(arr1);
+console.log(arr2);
+```
+<img src="../img/vue10.png">
+
+```js
+const arr1 = [1, 2, 3]
+const arr2 = [...arr1]
+arr2.push(4)
+console.log(arr1);
+console.log(arr2);
+```
+
+<img src="../img/vue11.png">
+
+对象同理
+```js
+obj1 = {
+  name: '李四',
+  age: 20,
+  gender: '女'
+}
+
+obj2 = {
+  ...obj1,
+}
+```
+合并数组或对象
+```js
+const arr1 = [1, 2, 3]
+const arr2 = [4, 5, 6]
+const arr3 = [...arr1, ...arr2]
+
+obj1 = {
+  name: '李四',
+  age: 20,
+  gender: '女'
+}
+
+obj2 = {
+  name: '张三',
+  age: 18,
+  gender: '男'
+}
+
+const obj3 = {...obj1, ...obj2}
+```
+
+## 序列化和反序列化
+
+`序列化`: 把对象转换为json格式字符串
+`反序列化`: 把json格式字符串转换为对象
+
+`json`: 是一种严格的对象表示法, 体现在json格式数据的属性名必须用双引号, 字符串必须用双引号
+
+```js
+const obj = {
+  name: '张三',
+  age: 18,
+  gender: '男'
+}
+
+const json = {
+  "name": "张三",
+  "age": 18,
+  "gender": "男"
+}
+
+// 序列化
+const str = JSON.stringify(obj)
+console.log(str);
+
+// 反序列化
+const obj2 = JSON.parse(str)
+console.log(obj2);
+```
