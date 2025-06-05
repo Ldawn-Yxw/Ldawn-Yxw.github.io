@@ -529,3 +529,208 @@ console.log(str);
 const obj2 = JSON.parse(str)
 console.log(obj2);
 ```
+
+## Web存储
+
+`Web存储`: 相当于一个本地数据库, 不超过5M即可。
+
+`sessionStorage`: 始于浏览器打开, 止于当前窗口关闭或者浏览器关闭
+
+`localStorage`: 做到持久化存储, 只要不动手删除, 数据会永久存储
+
+```js
+// 存
+localStorage.setItem('name', '张三')
+
+// 取
+// 如果存在key, 则取出相应的数据，否则取值为null(表示key不存在)
+const name = localStorage.getItem('name')
+console.log(name)
+
+// 删
+localStorage.removeItem('name')
+```
+
+<img src="../img/vue12.png">
+
+> Note: 如果要在本地存储数组或对象必须经过序列化和反序列化
+
+```js
+obj = {
+  name: '张三',
+  age: 18,
+  gender: '男'
+}
+
+// 存, 序列化
+localStorage.setItem('obj', JSON.stringify(obj))
+
+// 取, 反序列化
+const str = localStorage.getItem('obj')
+const obj2 = JSON.parse(str)
+console.log(obj2)~
+```
+
+## Promise + Async + Await ⚡️
+
+`同步代码` 🔄: 串行执行, 前面的代码先执行, 后面代码后执行
+
+`异步代码` 🔀: 并行执行
+
+>JavaScript的代码执行既有同步也有异步，让我详细解释：
+>
+>1. **同步代码**：
+>- 普通的代码执行都是同步的，按照顺序一行一行执行
+>- 例如：
+>```javascript
+>let a = 1;
+>let b = 2;
+>console.log(a + b);
+>```
+>这样的代码就是同步执行，必须等前一行执行完才会执行下一行
+>
+>2. **异步代码**：
+>特定的一些操作是异步的，主要包括：
+>- 定时器（setTimeout/setInterval）
+>- AJAX请求（fetch/axios）
+>- 事件监听（addEventListener）
+>- Promise
+>- async/await
+>- 文件操作
+>
+>举个例子来说明同步和异步的区别：
+>```javascript
+>console.log('1');  // 同步代码
+>
+>setTimeout(() => {  // 异步代码
+>    console.log('2');
+>}, 1000);
+>
+>console.log('3');  // 同步代码
+>```
+>执行结果会是：
+>1. 先打印 "1"
+>2. 再打印 "3"
+>3. 1秒后才打印 "2"
+>
+>这是因为：
+>1. JavaScript引擎会先执行所有的同步代码
+>2. 遇到异步代码时，会将其放入任务队列
+>3. 等所有同步代码执行完毕后，才会去执行任务队列中的异步代码
+>
+>所以总结来说：
+>- JavaScript代码默认是同步执行的
+>- 但某些特定的操作（如上面提到的那些）是异步执行的
+>- 这种机制让JavaScript能够在执行耗时操作时不会阻塞主线程，保证程序的流畅运行
+>
+>这就是为什么JavaScript被称为"单线程异步"语言的原因。
+
+```js
+// 需求: 停两秒输出1, 再停一秒输出2, 再停一秒输出3
+setTimeout(() => {
+  console.log(1);
+},2000)
+
+setTimeout(() => {
+  console.log(2);
+},1000)
+
+setTimeout(() => {
+  console.log(3);
+},1000)
+```
+
+<img src="../img/vue13.png">
+
+`Promise` 🤝: JS新增的一个类, 用来解决异步问题, 通过异步成功还是失败, 决定Promise的状态是成功还是失败, Promise支持链式调用, 用来消除回调地狱。
+
+`Promise的三种状态` 🎯: 
+
+`1.` Pending ⏳: 进行中, 此时Promise的状态还不确定
+
+`2.` Fullfilled ✅: 成功 (状态确定了)
+
+`3.` Rejected ❌: 失败 (状态也确定了)
+
+> Note ℹ️: Promise的状态一旦确定了, 就不可改变了。并且状态之间的切换只能是: Pending -> Fullfilled 或 Pending -> Rejected
+
+```js
+const p = new Promise((resolve, reject) => { // 成功, 失败
+  // 在这里包装异步代码: 定时器, ajax请求
+  setTimeout(() => {
+    // 调用 resolve() 表示成功
+    resolve(1)
+  },2000)
+})
+
+p.then(() => {
+  console.log(1);
+},() => {
+  console.log(2);
+})
+```
+
+<img src="../img/vue15.png">
+
+为了完成需求
+```js
+// 丑陋写法 👎
+// 回调地狱
+// 为了解决这个问题, Promise 出现了
+setTimeout(() => {
+  console.log(1);
+  setTimeout(() => {
+    console.log(2);
+    setTimeout(() => {
+      console.log(3);
+    },1000)
+  },1000)
+},2000)
+
+// 优雅写法 👍
+/*
+** 参数
+* duration: 延迟时间
+* n: 第几次
+*/
+function delay (duration, n) {
+  return new Promise((resolve, reject) => {
+    setTimeout(() => {
+      resolve(n)
+    },duration)
+  })
+}
+
+delay(2000, 1).then(n => {
+  console.log(n);
+  return delay(1000, 2)
+}).then(n => {
+  console.log(n);
+  return delay(1000, 3)
+}).then(n => {
+  console.log(n);
+})
+
+// 去除链式调用 ✨
+function delay (duration, n) {
+  return new Promise((resolve, reject) => {
+    setTimeout(() => {
+      resolve(n)
+    },duration)
+  })
+}
+
+async function log() {
+  // 在 Promise 实例前 await 关键字, 这样 await 的返回值就是 Promise 实例的 resolve 的值
+  // await 关键字只能出现在 async 函数中
+  const n = await delay(2000, 1)
+  console.log(n);
+  const n2 = await delay(1000, 2)
+  console.log(n2);
+  const n3 = await delay(1000, 3)
+  console.log(n3);
+}
+
+log()  
+```
+
