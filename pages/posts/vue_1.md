@@ -568,7 +568,7 @@ localStorage.setItem('obj', JSON.stringify(obj))
 // 取, 反序列化
 const str = localStorage.getItem('obj')
 const obj2 = JSON.parse(str)
-console.log(obj2)~
+console.log(obj2)
 ```
 
 ## Promise + Async + Await ⚡️
