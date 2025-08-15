@@ -535,7 +535,8 @@ v-model.lazy="数据": 当失焦的时候再同步给数据, 而不是实时同�
 <style>
 
 </style>
-``
+```
+
 ```html
 <script setup>
   import { ref } from 'vue';
@@ -591,10 +592,83 @@ v-model.lazy="数据": 当失焦的时候再同步给数据, 而不是实时同�
     <input type="checkbox" v-model="hobbies" value="J"> J
   </div>
 </template>
- 
 
 <style>
 
 </style>
 ```
 # 样式绑定
+
+**1.** 为了便于程序员给元素动态的设置样式, Vue扩展了v-bind语法, 允许我们通过绑定class 或 style 属性, 通过数据控制元素的样式
+
+**2.** `分类`：(1) 绑定 class (2) 绑定 style
+
+### class 绑定
+`语法`：
+
+  1. 三元绑定：:class="条件 ? '类名1' : '类名2'"
+  2. 对象绑定：:class="{类名1: 布尔值1, 类名2: 布尔值2}"
+
+```html
+<script setup>
+  import { ref } from 'vue'; 
+  const isActive = ref(true);
+</script>
+
+<template>
+  <!-- 1.三元绑定 --->
+  <p :class="isActive ? 'active' : 'inactive'">123</p>
+  <!-- 2.对象绑定 -->
+  <p :class="{active: isActive}">123</p>
+  <!-- 3.静态class与动态class可以共存，二者会合并 -->
+  <p :class="{inactive: isActive}"
+    class="item">123</p>
+  <!-- 两者同时存在时会优先静态的类 -->
+</template>
+
+<style>
+  .active {
+    color: red;
+  }
+  .inactive {
+    color: blue;
+  }
+  /* .item {
+    color: red;
+  } */
+</style>
+```
+
+<img src="../img/vue25.png">
+
+### style 绑定
+`语法`: :style="{CSS属性名1:表达式1, CSS属性名2:表达式2, ...}"
+
+```html
+<script setup>
+  import { ref, reactive } from 'vue'
+  // 字体颜色
+  const colorstr = ref('red')
+
+  const styleObj = reactive({
+    color: 'green',
+    background: 'yellow'
+  })
+</script>
+
+<template>
+  <div>
+    <p :style="{color: colorstr}">style</p>
+    <p :style="styleObj">style</p>
+  </div>
+</template>
+
+<style>
+  /* p {  类似于这种效果
+    color: red;
+  } */
+</style>
+```
+<img src="../img/vue26.png">
+
+
