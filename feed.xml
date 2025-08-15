@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8"?>
+<rss version="2.0" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom">
+    <channel>
+        <title>Ldawn-Blog</title>
+        <link>https://Ldawn-Yxw.github.io/</link>
+        <description>小小技术博客</description>
+        <lastBuildDate>Fri, 15 Aug 2025 17:46:13 GMT</lastBuildDate>
+        <docs>https://validator.w3.org/feed/docs/rss2.html</docs>
+        <generator>https://github.com/jpmonette/feed</generator>
+        <image>
+            <title>Ldawn-Blog</title>
+            <url>https://userpic.codeforces.org/3526839/title/61e8503ddb4b1446.jpg</url>
+            <link>https://Ldawn-Yxw.github.io/</link>
+        </image>
+        <copyright>CC BY-NC-SA 4.0 2025 © 图图不糊涂</copyright>
+        <atom:link href="https://Ldawn-Yxw.github.io/feed.xml" rel="self" type="application/rss+xml"/>
+        <item>
+            <title><![CDATA[Vue入门]]></title>
+            <link>https://Ldawn-Yxw.github.io/posts/vue_2</link>
+            <guid>https://Ldawn-Yxw.github.io/posts/vue_2</guid>
+            <pubDate>Thu, 05 Jun 2025 00:00:00 GMT</pubDate>
+            <content:encoded><![CDATA[<h1>Hello Vue3</h1>
+<p>让我们先输出一个 Hello Vue3.</p>
+<pre><code class="language-html">&lt;!DOCTYPE html&gt;
+&lt;html lang=&quot;en&quot;&gt;
+&lt;head&gt;
+  &lt;met</code></pre>
+<br/><p>访问 <a href="https://Ldawn-Yxw.github.io/posts/vue_2" target="_blank">https://Ldawn-Yxw.github.io/posts/vue_2</a> 阅读全文。</p>]]></content:encoded>
+            <author>i@valaxy.site (图图不糊涂)</author>
+        </item>
+        <item>
+            <title><![CDATA[Vue前置知识]]></title>
+            <link>https://Ldawn-Yxw.github.io/posts/vue_1</link>
+            <guid>https://Ldawn-Yxw.github.io/posts/vue_1</guid>
+            <pubDate>Thu, 29 May 2025 00:00:00 GMT</pubDate>
+            <content:encoded><![CDATA[<h2>常量与变量 📝</h2>
+<p><code>let</code> 定义变量, 可以被多次赋值 ✏️</p>
+<p><code>const</code> 定义常量, 不能被二次赋值 🔒</p>
+<pre><code class="language-js">// 变量
+let name = '张三'</code></pre>
+<br/><p>访问 <a href="https://Ldawn-Yxw.github.io/posts/vue_1" target="_blank">https://Ldawn-Yxw.github.io/posts/vue_1</a> 阅读全文。</p>]]></content:encoded>
+            <author>i@valaxy.site (图图不糊涂)</author>
+        </item>
+        <item>
+            <title><![CDATA[MySQL内置函数]]></title>
+            <link>https://Ldawn-Yxw.github.io/posts/mysql_1</link>
+            <guid>https://Ldawn-Yxw.github.io/posts/mysql_1</guid>
+            <pubDate>Thu, 15 May 2025 00:00:00 GMT</pubDate>
+            <content:encoded><![CDATA[<h1>日期函数</h1>
+<h2>时间戳</h2>
+<pre><code class="language-sql">mysql&gt; select current_date();
++----------------+
+| current_date() |
++</code></pre>
+<br/><p>访问 <a href="https://Ldawn-Yxw.github.io/posts/mysql_1" target="_blank">https://Ldawn-Yxw.github.io/posts/mysql_1</a> 阅读全文。</p>]]></content:encoded>
+            <author>i@valaxy.site (图图不糊涂)</author>
+        </item>
+    </channel>
+</rss>

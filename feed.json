@@ -1,0 +1,50 @@
+{
+    "version": "https://jsonfeed.org/version/1",
+    "title": "Ldawn-Blog",
+    "home_page_url": "https://Ldawn-Yxw.github.io/",
+    "feed_url": "https://Ldawn-Yxw.github.io/feed.json",
+    "description": "小小技术博客",
+    "icon": "https://userpic.codeforces.org/3526839/title/61e8503ddb4b1446.jpg",
+    "author": {
+        "name": "图图不糊涂",
+        "url": "https://valaxy.site"
+    },
+    "items": [
+        {
+            "id": "",
+            "content_html": "<h1>Hello Vue3</h1>\n<p>让我们先输出一个 Hello Vue3.</p>\n<pre><code class=\"language-html\">&lt;!DOCTYPE html&gt;\n&lt;html lang=&quot;en&quot;&gt;\n&lt;head&gt;\n  &lt;met</code></pre>\n<br/><p>访问 <a href=\"https://Ldawn-Yxw.github.io/posts/vue_2\" target=\"_blank\">https://Ldawn-Yxw.github.io/posts/vue_2</a> 阅读全文。</p>",
+            "url": "https://Ldawn-Yxw.github.io/posts/vue_2",
+            "title": "Vue入门",
+            "date_modified": "2025-06-05T00:00:00.000Z",
+            "date_published": "2025-06-05T00:00:00.000Z",
+            "author": {
+                "name": "图图不糊涂",
+                "url": "https://valaxy.site"
+            }
+        },
+        {
+            "id": "",
+            "content_html": "<h2>常量与变量 📝</h2>\n<p><code>let</code> 定义变量, 可以被多次赋值 ✏️</p>\n<p><code>const</code> 定义常量, 不能被二次赋值 🔒</p>\n<pre><code class=\"language-js\">// 变量\nlet name = '张三'</code></pre>\n<br/><p>访问 <a href=\"https://Ldawn-Yxw.github.io/posts/vue_1\" target=\"_blank\">https://Ldawn-Yxw.github.io/posts/vue_1</a> 阅读全文。</p>",
+            "url": "https://Ldawn-Yxw.github.io/posts/vue_1",
+            "title": "Vue前置知识",
+            "date_modified": "2025-05-29T00:00:00.000Z",
+            "date_published": "2025-05-29T00:00:00.000Z",
+            "author": {
+                "name": "图图不糊涂",
+                "url": "https://valaxy.site"
+            }
+        },
+        {
+            "id": "",
+            "content_html": "<h1>日期函数</h1>\n<h2>时间戳</h2>\n<pre><code class=\"language-sql\">mysql&gt; select current_date();\n+----------------+\n| current_date() |\n+</code></pre>\n<br/><p>访问 <a href=\"https://Ldawn-Yxw.github.io/posts/mysql_1\" target=\"_blank\">https://Ldawn-Yxw.github.io/posts/mysql_1</a> 阅读全文。</p>",
+            "url": "https://Ldawn-Yxw.github.io/posts/mysql_1",
+            "title": "MySQL内置函数",
+            "date_modified": "2025-05-15T00:00:00.000Z",
+            "date_published": "2025-05-15T00:00:00.000Z",
+            "author": {
+                "name": "图图不糊涂",
+                "url": "https://valaxy.site"
+            }
+        }
+    ]
+}
